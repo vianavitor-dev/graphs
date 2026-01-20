@@ -13,11 +13,11 @@ package com.graphs.vianavitor.disjointsset;
       worst case: O(N)
       <= O(N)
 */
-public class QuickJoin {
+public class QuickUnion {
     private int[] root;
 
     // it initlizes the root array with indexes as verteces
-    public QuickJoin(int size) {
+    public QuickUnion(int size) {
         root = new int[size];
 
         for (int i = 0; i < size; i++) {
@@ -30,9 +30,11 @@ public class QuickJoin {
         while (x != root[x]) {
             x = root[x];
         }
+
+        return x;
     }
 
-    public union(int x, int y) {
+    public void union(int x, int y) {
         int rootX = find(x);
         int rootY = find(y);
         
