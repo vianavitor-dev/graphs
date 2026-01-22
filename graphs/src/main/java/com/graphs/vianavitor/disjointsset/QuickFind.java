@@ -46,4 +46,11 @@ public class QuickFind {
     public boolean isConnected(int x, int y) {
         return find(x) == find(y);
     }
+
+    public void display() {
+        for (int i = 0; i < root.length; i++) {
+            System.out.print(root[i] + " ");
+        }
+        System.out.println();
+    }
 }
